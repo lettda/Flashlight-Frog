@@ -5,8 +5,13 @@ using UnityEngine;
 public class player : MonoBehaviour {
 
     public float speed;
-	private Rigidbody2D rb;
+    public int health;
+    private int score;
+
+    private Rigidbody2D rb;
     private Vector2 moveAmount;
+
+   
 
 	// Use this for initialization
 	void Start () {
