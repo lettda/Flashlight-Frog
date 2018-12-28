@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bubble : MonoBehaviour {
+public class Bubble : MonoBehaviour {
 
     public float speed;
     public int timeToPop;
-    public static int value;
+    public int value;
     private Vector2 destinationPosition;
 
     //public float minY;
@@ -33,18 +33,17 @@ public class bubble : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D collision) //if the bubble collides with the player add it's value to player's score
+    private void OnTriggerEnter2D(Collider2D collision) //if the bubble collides with the player add it's value to player's score
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<player>().AddToScore(value);
+            collision.GetComponent<Player>().AddToScore(value);
             PopBubble();
         }
     }
 
     // Update is called once per frame
     void Update () {
-            transform.position = Vector2.MoveTowards(transform.position, destinationPosition, speed * Time.deltaTime); //bubble will float up from it's spawn position toward the destination position
-        
+            transform.position = Vector2.MoveTowards(transform.position, destinationPosition, speed * Time.deltaTime); //bubble will float up from it's spawn position toward the destination position    
     }
 }

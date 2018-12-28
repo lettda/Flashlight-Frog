@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player : MonoBehaviour {
+public class Player : MonoBehaviour {
 
     public float speed;
-    private int score;
+    public int score;
 
     private Rigidbody2D rb;
     private Vector2 moveAmount;
