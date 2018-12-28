@@ -5,13 +5,10 @@ using UnityEngine;
 public class player : MonoBehaviour {
 
     public float speed;
-    public int health;
     private int score;
 
     private Rigidbody2D rb;
     private Vector2 moveAmount;
-
-   
 
 	// Use this for initialization
 	void Start () {
@@ -21,11 +18,15 @@ public class player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")); //Create new vector 2 object to hold movement direction = to key direction pressed
         moveAmount = moveInput.normalized * speed; //move in the moveInput direction at a given speed
          
 	}
+    public void AddToScore(int objectValue)
+    {
+        score += objectValue;
+        Debug.Log(score);
+    }
 
     private void FixedUpdate()
     {

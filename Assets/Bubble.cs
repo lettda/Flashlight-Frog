@@ -6,7 +6,7 @@ public class bubble : MonoBehaviour {
 
     public float speed;
     public int timeToPop;
-    public int value;
+    public static int value;
     private Vector2 destinationPosition;
 
     //public float minY;
@@ -33,10 +33,14 @@ public class bubble : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision) //pop bubble if it hits the player
-    //{
-        
-    //}
+    void OnTriggerEnter2D(Collider2D collision) //if the bubble collides with the player add it's value to player's score
+    {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<player>().AddToScore(value);
+            PopBubble();
+        }
+    }
 
     // Update is called once per frame
     void Update () {

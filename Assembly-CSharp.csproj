@@ -51,9 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\bubble.cs" />
+     <Compile Include="Assets\Bubble.cs" />
      <Compile Include="Assets\camFollow.cs" />
-     <Compile Include="Assets\player.cs" />
+     <Compile Include="Assets\Player.cs" />
  <Reference Include="UnityEngine.UIAutomation">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
  </Reference>
